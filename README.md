@@ -1,6 +1,6 @@
 # 30 Days of RAG Engineering
 
-Day 01 — Embeddings & Semantic Search
+Day 01 : Embeddings & Semantic Search
 
 What I learned:
 - What embeddings are
