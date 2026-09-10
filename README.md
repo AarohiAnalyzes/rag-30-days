@@ -59,29 +59,70 @@ Generated Answer
 
 ---
 
-## Day 03: Mini RAG System
+## Day 03: Mini RAG Pipeline
 
-### What I Plan to Build
+### What I Learned
 
-Build a simple **end-to-end Mini RAG System** from scratch using everything learned so far.
+* Building a small RAG system from individual components
+* Creating document embeddings for a knowledge base
+* Converting a user question into an embedding
+* Calculating cosine similarity between the query and documents
+* Finding the most relevant document
+* Retrieving the Top-K relevant documents
+* Understanding document ranking using `np.argsort()`
+* Building a context from retrieved documents
+* Passing retrieved context and the question to Gemini
+* Generating an answer grounded in the retrieved context
 
-The system will:
+### Project
 
-* Store a small document collection
-* Generate document embeddings
-* Convert user questions into embeddings
-* Retrieve relevant documents
-* Build context automatically
-* Send context + question to Gemini
-* Generate the final answer
-* Organize the pipeline into reusable Python functions
+Built a **Mini RAG Pipeline from scratch** using a small knowledge base containing documents about Python, Machine Learning, RAG, Docker, APIs, Redis, RabbitMQ, and Vector Databases.
 
-### Goal
+The pipeline retrieves the most relevant documents for a question and provides them as context to Gemini before generating the final answer.
 
-Move from manually executing individual RAG steps to a reusable function such as:
+### Example
 
-```python
-answer_question("What is RAG?")
+**Question:**
+
+```text
+What is RAG?
+```
+
+**Retrieved Context:**
+
+```text
+Retrieval-Augmented Generation, or RAG, combines information
+retrieval with language generation to provide an LLM with
+relevant external context.
+```
+
+**Generated Answer:**
+
+```text
+Based on the provided context, RAG stands for
+Retrieval-Augmented Generation. It combines information
+retrieval with language generation to provide a large
+language model (LLM) with relevant external context.
+```
+
+### Day 03 Pipeline
+
+```text
+User Question
+      ↓
+Query Embedding
+      ↓
+Cosine Similarity
+      ↓
+Document Ranking
+      ↓
+Top-K Retrieval
+      ↓
+Context Creation
+      ↓
+Gemini LLM
+      ↓
+Final Answer
 ```
 
 ---
@@ -102,7 +143,7 @@ answer_question("What is RAG?")
 
 * [x] Day 01 — Embeddings & Semantic Search
 * [x] Day 02 — Basic RAG
-* [ ] Day 03 — Mini RAG System
+* [x] Day 03 — Mini RAG Pipeline
 * [ ] Day 04
 * [ ] Day 05
 * [ ] Day 06
@@ -137,4 +178,4 @@ answer_question("What is RAG?")
 
 Each day focuses on building something small and practical rather than only learning theory.
 
-The goal is to understand **what happens inside a RAG system**, first building the components from scratch and later introducing frameworks and more advanced techniques.
+The goal is to understand **what happens inside a RAG system** by first building the core components from scratch and gradually moving toward more advanced RAG techniques, tools, frameworks, and production-oriented concepts.
